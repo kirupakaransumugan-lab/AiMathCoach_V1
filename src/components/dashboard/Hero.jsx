@@ -46,12 +46,13 @@ export default function Hero({ userName = "Kumar", onStartLearning, onRevealed }
           variants={item}
           className="font-display mt-3 text-4xl font-bold leading-[1.05] text-ink sm:text-5xl lg:text-[3.4rem] dark:text-ink-dark"
         >
-          Master Combined
-          <br />
-          Maths{" "}
-          <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
-            your way.
-          </span>
+         Master
+             <br />
+            Combined Maths
+            <br />
+            <span className="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
+             your way.
+             </span>
         </motion.h1>
 
         <motion.p

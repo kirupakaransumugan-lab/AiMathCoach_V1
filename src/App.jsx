@@ -16,25 +16,26 @@ export default function App() {
     setActiveTab(id);
   }
 
-  return (
-    <div className="relative min-h-screen overflow-x-hidden">
-      <BackgroundDecor />
-      <BearMascot />
+  
+   return (
+  <div className="relative min-h-screen overflow-x-hidden">
+    <BackgroundDecor />
+    <BearMascot />
 
-      <TopNav activeTab={activeTab} onTabChange={handleTabChange} />
+    <TopNav activeTab={activeTab} onTabChange={handleTabChange} />
 
-      <main className="relative z-10 mx-auto flex max-w-[1400px] flex-col gap-10 px-4 pb-40 pt-8 sm:px-6 sm:pt-10 lg:pb-16">
-        {activeTab === "home" ? (
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start lg:gap-6">
-            <Hero onStartLearning={() => handleTabChange("ai-tutor")} onRevealed={() => setRevealed(true)} />
-            <StudyRecordCard start={revealed} />
-          </div>
-        ) : (
-          <ComingSoonPanel tabId={activeTab} />
-        )}
+    <main className="relative z-10 mx-auto flex max-w-[1400px] flex-col gap-8 px-4 pb-36 pt-8 sm:px-6 sm:pt-10 lg:gap-10 xl:max-w-[1680px] xl:px-10 xl:pt-12 2xl:max-w-[1880px]">
+      {activeTab === "home" ? (
+        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start lg:gap-10 xl:gap-16">
+          <Hero onStartLearning={() => handleTabChange("ai-tutor")} onRevealed={() => setRevealed(true)} />
+          <StudyRecordCard start={revealed} />
+        </div>
+      ) : (
+        <ComingSoonPanel tabId={activeTab} />
+      )}
+    </main>
 
-        <ChatWidget />
-      </main>
-    </div>
-  );
+    <ChatWidget />
+  </div>
+);
 }
